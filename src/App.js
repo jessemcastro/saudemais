@@ -8,6 +8,7 @@ import TemplateDefault from './templates/Default'
 import TemplatePage from './templates/Page'
 
 import Customers from './pages/Customers'
+import Professors from './pages/Professors'
 import Home from './pages/Home'
 
 const App = () => {
@@ -17,6 +18,9 @@ const App = () => {
         <Switch>
           <Route path="/customers">
             <TemplatePage title="Clientes" Component={Customers} />
+          </Route>
+          <Route path="/professors">
+            <TemplatePage title="Professores" Component={Professors} />
           </Route>
           <Route path="/">
             <TemplatePage title="Página Inicial" Component={Home} />
