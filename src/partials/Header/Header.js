@@ -17,6 +17,8 @@ import { useHistory } from 'react-router-dom'
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
 import PersonAddIcon from '@material-ui/icons/PersonAdd'
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday'
+// import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
 
 import useStyles from './Header.style'
 
@@ -77,6 +79,12 @@ const Header = () => {
                             <PersonAddIcon />
                         </ListItemIcon>
                         <ListItemText>Cadastro de Professores</ListItemText>
+                    </ListItem>
+                    <ListItem button onClick={() => handleMenuClick('/calendar')}>
+                        <ListItemIcon>
+                            <CalendarTodayIcon />
+                        </ListItemIcon>
+                        <ListItemText>Agenda</ListItemText>
                     </ListItem>
                 </List>
             </Drawer>
