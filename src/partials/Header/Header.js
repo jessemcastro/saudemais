@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Login from '../../pages/Login'
 import {
     AppBar,
     Toolbar,
@@ -13,6 +14,7 @@ import {
 } from '@material-ui/core'
 
 import { useHistory } from 'react-router-dom'
+
 
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
@@ -55,9 +57,9 @@ const Header = () => {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className={classes.title} component="div" sx={{ flexGrow: 1 }}>
-                    My App
+                    Mais Saude
                 </Typography>
-                <Button color="inherit">Login</Button>
+                <Button color="inherit" onClick={() =>history.push('/login')}>Login</Button>
                 </Toolbar>
             </AppBar>
             <Drawer open={menuOpen} onClose={() => handleToggleMenu()}>
