@@ -16,6 +16,7 @@ import { useHistory } from 'react-router-dom'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
+import ListIcon from '@material-ui/icons/List'
 import PersonAddIcon from '@material-ui/icons/PersonAdd'
 
 import useStyles from './Header.style'
@@ -67,6 +68,12 @@ const Header = () => {
                         <ListItemText>Home</ListItemText>
                     </ListItem>
                     <ListItem button onClick={() => handleMenuClick('/customers')}>
+                        <ListItemIcon>
+                            <ListIcon />
+                        </ListItemIcon>
+                        <ListItemText>Lista de Clientes</ListItemText>
+                    </ListItem>
+                    <ListItem button onClick={() => handleMenuClick('/customers/add')}>
                         <ListItemIcon>
                             <PersonAddIcon />
                         </ListItemIcon>

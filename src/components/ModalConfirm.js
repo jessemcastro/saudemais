@@ -22,7 +22,7 @@ const ModalConfirm = ({
         <Dialog
           open={open}
           onClose={onClose}
-          aria-labelledby="alert-dialog-title"
+          aria-labelledby="alert-dialog-title" 
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
