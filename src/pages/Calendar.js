@@ -1,11 +1,40 @@
 import React from "react";
+import { useState, useEffect } from 'react'
 import BigCalendar from "react-big-calendar-like-google";
 import moment from "moment";
 import "react-big-calendar-like-google/lib/css/react-big-calendar.css";
 
+import axios from 'axios'
+
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect from '@mui/material/NativeSelect';
+
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 
+
 const Calendar = () => {
+
+    const [professors, setProfessors] = useState([])
+      useEffect(() => {
+          axios.get('https://reqres.in/api/users?page=2')
+              .then(response => {
+                  const { data } = response.data
+
+                  setProfessors(data)
+              })
+      }, [])
+    
+    const [customers, setCustomers] = useState([])
+    useEffect(() => {
+        axios.get('https://reqres.in/api/users')
+            .then(response => {
+                const { data } = response.data
+
+                setCustomers(data)
+            })
+    }, [])
+
 
     const events = [
       {
@@ -124,12 +153,65 @@ const Calendar = () => {
         end: new Date(2021, 9, 22, 2, 0, 0)
       }
     ];
+
     return (
       <div >
-        <h3 className="callout">
-          Click an event to see more info, or drag the mouse over the calendar
-          to select a date/time range.
-        </h3>
+        
+        <div >
+          <FormControl  sx={{ m: 2, minWidth: 220 }}>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              Professor
+            </InputLabel>
+            <NativeSelect
+              inputProps={{
+                name: 'professor',
+                id: 'uncontrolled-native',
+              }}
+            >
+              {professors.map((option) => (
+                <option value={option.id}>{"Prof. " + option.first_name}</option>
+              ))}
+            </NativeSelect>
+          </FormControl>
+          
+
+
+
+
+          <FormControl  sx={{ m: 2, minWidth: 220 }}>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              Aluno
+            </InputLabel>
+            <NativeSelect
+              inputProps={{
+                name: 'aluno',
+                id: 'uncontrolled-native',
+              }}
+            >
+            {customers.map((option) => (
+              <option value={option.id}>{option.first_name + ' ' + option.last_name}</option>
+            ))}
+            </NativeSelect>
+          </FormControl>
+
+
+          <FormControl  sx={{ m: 2, minWidth: 220 }}>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+              Modalidade
+            </InputLabel>
+            <NativeSelect
+              inputProps={{
+                name: 'modalidade',
+                id: 'uncontrolled-native',
+              }}
+            >
+              <option value={1}>Modalidade 1</option>
+              <option value={2}>Modalidade 2</option>
+              <option value={3}>Modalidade 3</option>
+            </NativeSelect>
+          </FormControl>
+        </div>
+
         <BigCalendar
           selectable
           events={events}
