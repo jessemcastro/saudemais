@@ -36,7 +36,8 @@ const Customers = () => {
             <Grid container>
                 {
                     customers.map(item => (
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={4}> 
+                        {/* key={item.first_name} */}
                             <CustomerCard
                                 name={item.first_name}
                                 lastname={item.last_name}
