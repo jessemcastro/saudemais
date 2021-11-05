@@ -7,14 +7,10 @@ import {
 import TemplateDefault from './templates/Default'
 import TemplatePage from './templates/Page'
 
-<<<<<<< HEAD
 import CustomersList from './pages/customer/List'
 import CustomersRegister from './pages/customer/Register'
-=======
-import Customers from './pages/Customers'
 import Professors from './pages/Professors'
 import Calendar from './pages/Calendar'
->>>>>>> branch_alberth
 import Home from './pages/Home'
 import Login from './pages/Login'
 
