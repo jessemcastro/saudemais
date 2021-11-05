@@ -43,12 +43,24 @@ const Professors = () => {
               <Button color="success" variant="contained" onClick={()=>setIsModalVisible(true)}><PersonAddIcon/> Novo Professor</Button>
               {isModalVisible ? <ModalProfessor onClose = {() => setIsModalVisible(false)} >
                 <h2 className = 'Titulo'>Cadastro Novo Professor</h2>
-               <div>
-                <label>Nome do Professor:</label><br/>
-                <input type ="text" className= 'FormProf'></input>
-                <label>Idade</label>
-                <input type ="number" className= 'FormProf'></input>
-                
+               <div className = 'FormProf'>
+                    <form>
+                      <div className = 'FormProfLabel'>
+                    <label>Nome Completo:</label><br/>
+                    <input type ="text" placeholder = 'Ex. João da Silva'></input>
+                    </div>
+                    <div className = 'FormProfLabel'>
+                    <label>Email:</label><br/>
+                    <input type ="email"  placeholder = 'Ex. email@email.com'></input>
+                    </div>
+                    <div className = 'FormProfLabel'>
+                    <label>Telefone:</label><br/>
+                    <input type ="text"  placeholder = '(xx)x xxxx-xxxx'></input>
+                    </div>
+                   <div className = 'FormProfButton'>  
+                   <Button color="success" variant="contained" onClick={()=>setIsModalVisible(true)}><PersonAddIcon/>SALVAR</Button>
+                   </div>
+                    </form>
                </div>
               </ModalProfessor> : null}
              

@@ -10,11 +10,12 @@
     align-items: center;
     justify-content: center;
     .container{
-        background-color: white;
         color: black;
         width: 40%;
-        height: 40%;
+        //height: 60%;
         border-radius: 20px;
+        
+        background-color:#512da8;
         
     .close{
         background-color: transparent; 
@@ -29,7 +30,7 @@
             position: absolute;
             width: 2.5px;
             height: 24px;
-            background-color:#000;
+            background-color:#fff;
         }
         &:before{
             transform: rotate(45deg);
@@ -41,17 +42,45 @@
       .content{
           .Titulo{
               text-align: center;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-weight: 300;
+              color: #fff;
+            
           }
           .FormProf{
-            display: flex;
+              max-width: 80%;
+              margin: 20px auto;
+           /* display: flex;
             width: 50%;
             padding: 12px 20px;
             margin: 15px 10px;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
+            box-sizing: border-box;*/
+            
         }
+        .FormProf form{
+            max-width: 100%;
+            padding: 0 20px;
+
+        }
+        .FormProfLabel{
+            margin-top: 10px;
+            color: #fff;
+        }
+        .FormProf form input{
+            width: 100%;
+            padding: 7px 0;
+        }
+        .FormProfButton{
+            margin-top: 50px;
+        
+        }
+        .FormProfButton button {
+            width: 100%;
+        }
+
       }
      
     }
