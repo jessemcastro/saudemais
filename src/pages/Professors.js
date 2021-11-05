@@ -58,7 +58,7 @@ const Professors = () => {
                     <input type ="text"  placeholder = '(xx)x xxxx-xxxx'></input>
                     </div>
                    <div className = 'FormProfButton'>  
-                   <Button color="success" variant="contained" onClick={()=>setIsModalVisible(true)}><PersonAddIcon/>SALVAR</Button>
+                   <Button color="success" variant="contained" onClick={()=>setIsModalVisible(true)}>SALVAR</Button>
                    </div>
                     </form>
                </div>
