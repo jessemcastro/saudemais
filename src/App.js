@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import TemplateDefault from './templates/Default';
 import TemplatePage from './templates/Page';
-import List from './pages/customer/List';
 import Home from './pages/Home';
-
 import Newstudent from './pages/Newstudent';
-import Register from './pages/customer/Register';
+import CustomersList from './pages/customer/List';
+import CustomersRegister from './pages/customer/Register';
+import Professors from './pages/Professors';
+import Calendar from './pages/Calendar';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -17,10 +19,19 @@ const App = () => {
             <TemplatePage title="Cadastro de Alunos" Component={Newstudent} />
           </Route>
           <Route path="/customers">
-            <TemplatePage title="Listar Alunos" Component={List} />
+            <TemplatePage title="Listar Alunos" Component={CustomersList} />
           </Route>
           <Route path="/register">
-            <TemplatePage title="Register " Component={Register} />
+            <TemplatePage title="Register " Component={CustomersRegister} />
+          </Route>
+          <Route path="/professors">
+            <TemplatePage title="Professores" Component={Professors} />
+          </Route>
+          <Route path="/calendar">
+            <TemplatePage title="Agenda" Component={Calendar} />
+          </Route>
+          <Route path="/login">
+            <TemplatePage title="Login" Component={Login} />
           </Route>
           <Route path="/">
             <TemplatePage title="Página Inicial" Component={Home} />

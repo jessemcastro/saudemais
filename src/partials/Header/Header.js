@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Login from '../../pages/Login';
 import {
   AppBar,
   Toolbar,
@@ -17,6 +18,10 @@ import ListIcon from '@material-ui/icons/List';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import ListIcon from '@material-ui/icons/List';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+// import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
 
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
@@ -62,9 +67,9 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1 }}
           >
-            My App
+            Mais Saude
           </Typography>
-          <Button color="inherit" onClick={() => handleLogin()}>
+          <Button color="inherit" onClick={() => history.push('/login')}>
             Login
           </Button>
         </Toolbar>
@@ -81,13 +86,25 @@ const Header = () => {
             <ListItemIcon>
               <ListIcon />
             </ListItemIcon>
-            <ListItemText>Listar Alunos</ListItemText>
+            <ListItemText>Lista de Clientes</ListItemText>
           </ListItem>
-          <ListItem button onClick={() => handleMenuClick('/newstudent')}>
+          <ListItem button onClick={() => handleMenuClick('/customers/add')}>
             <ListItemIcon>
               <PersonAddIcon />
             </ListItemIcon>
-            <ListItemText>Cadastro de Alunos</ListItemText>
+            <ListItemText>Cadastro de Clientes</ListItemText>
+          </ListItem>
+          <ListItem button onClick={() => handleMenuClick('/professors')}>
+            <ListItemIcon>
+              <PersonAddIcon />
+            </ListItemIcon>
+            <ListItemText>Cadastro de Professores</ListItemText>
+          </ListItem>
+          <ListItem button onClick={() => handleMenuClick('/calendar')}>
+            <ListItemIcon>
+              <CalendarTodayIcon />
+            </ListItemIcon>
+            <ListItemText>Agenda</ListItemText>
           </ListItem>
         </List>
       </Drawer>
