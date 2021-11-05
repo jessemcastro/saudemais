@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles.scss'
-const ModalProfessor = ({onClose=() =>{},children}) => {
+const ModalForm = ({onClose=() =>{},children}) => {
 
 
 
@@ -13,4 +13,4 @@ const ModalProfessor = ({onClose=() =>{},children}) => {
          </div>
     );
 }
-export default ModalProfessor;
+export default ModalForm;
