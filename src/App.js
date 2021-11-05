@@ -7,7 +7,7 @@ import CustomersList from './pages/customer/List';
 import CustomersRegister from './pages/customer/Register';
 import Professors from './pages/Professors';
 import Calendar from './pages/Calendar';
-import Home from './pages/Home';
+
 import Login from './pages/Login';
 
 const App = () => {
