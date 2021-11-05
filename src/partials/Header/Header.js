@@ -38,6 +38,9 @@ const Header = () => {
     history.push(route);
     handleToggleMenu();
   };
+  const handleLogin = () => {
+    history.push('/register');
+  };
 
   return (
     <>
@@ -61,7 +64,9 @@ const Header = () => {
           >
             My App
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => handleLogin()}>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer open={menuOpen} onClose={() => handleToggleMenu()}>

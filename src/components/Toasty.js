@@ -1,36 +1,31 @@
+import { Snackbar } from '@material-ui/core';
 
-import {
-    Snackbar,
-} from '@material-ui/core'
+import { Alert } from '@material-ui/lab';
 
-import MuiAlert from '@material-ui/lab/Alert'
+const Toasty = ({ open, text, severity, onClose }) => {
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
 
-  const Toasty = ({ open, text, severity, onClose }) => {
-    const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return
-        }
-
-    onClose()
-  }
+    onClose();
+  };
 
   return (
-      
     <Snackbar
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-        }}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'left',
+      }}
+      open={open}
+      autoHideDuration={6000}
+      onClose={handleClose}
+    >
+      <Alert elevation={6} variant="filled" severity={severity}>
+        {text}
+      </Alert>
+    </Snackbar>
+  );
+};
 
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        >
-            <MuiAlert elevation={6} variant="filled" severity={severity}>
-                {text}
-            </MuiAlert>
-        </Snackbar>
-    )
-}
-
-export default Toasty
+export default Toasty;
