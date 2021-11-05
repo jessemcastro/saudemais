@@ -93,15 +93,14 @@ export default function SignIn() {
             </Button>
             <FormControl component="fieldset">
   <FormLabel component="legend">Acesso</FormLabel>
-  <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
-    <FormControlLabel value="female" control={<Radio />} label="Admin" />
-    <FormControlLabel value="male" control={<Radio />} label="Professor" />
-    <FormControlLabel value="other" control={<Radio />} label="Aluno" />
+  <RadioGroup row aria-label="Acess" name="row-radio-buttons-group">
+    <FormControlLabel value="Admin" control={<Radio />} label="Admin" />
+    <FormControlLabel value="Prof" control={<Radio />} label="Professor" />
+    <FormControlLabel value="Alu" control={<Radio />} label="Aluno" />
   </RadioGroup>
 </FormControl>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
