@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router-dom'
 import { Button } from '@mui/material'
 import PersonAddIcon from '@material-ui/icons/PersonAdd'
+import ModalProfessor from '../components/ModalProfessor'
+import '../styles.scss'
 
 
 
@@ -18,11 +20,12 @@ const useStyles = makeStyles((theme) =>({
     }
 }))
 
+
 const Professors = () => {
     const history = useHistory()
     const classes = useStyles()
     const [professors, setProfessors] = useState([])
-
+    const  [isModalVisible, setIsModalVisible] = useState(false);
         useEffect(() => {
             axios.get('https://reqres.in/api/users?page=2')
                 .then(response => {
@@ -37,7 +40,18 @@ const Professors = () => {
     return (
         
         <div>
-              <Button color="success" variant="contained" onClick={() =>history.push('/formProfessors')}><PersonAddIcon/>. Novo Professor</Button>
+              <Button color="success" variant="contained" onClick={()=>setIsModalVisible(true)}><PersonAddIcon/> Novo Professor</Button>
+              {isModalVisible ? <ModalProfessor onClose = {() => setIsModalVisible(false)} >
+                <h2 className = 'Titulo'>Cadastro Novo Professor</h2>
+               <div>
+                <label>Nome do Professor:</label><br/>
+                <input type ="text" className= 'FormProf'></input>
+                <label>Idade</label>
+                <input type ="number" className= 'FormProf'></input>
+                
+               </div>
+              </ModalProfessor> : null}
+             
             <Grid container>
                
                 {
